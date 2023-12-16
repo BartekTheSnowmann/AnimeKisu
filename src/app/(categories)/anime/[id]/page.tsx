@@ -19,7 +19,7 @@ const fetchAnime = async (animeId: string) => {
   return response.data.data;
 };
 
-export const fetchCharacters = async (animeId: string) => {
+const fetchCharacters = async (animeId: string) => {
   const response = await axios.get(
     `https://api.jikan.moe/v4/anime/${animeId}/characters`
   );
