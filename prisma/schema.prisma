@@ -1,0 +1,51 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String      @id @default(auto()) @map("_id") @db.ObjectId
+  email     String?     @unique
+  name      String?
+  username  String      @unique
+  password  String
+  image     String?
+  Favorites Favorites[]
+}
+
+model AnimeItem {
+  id            String          @id @default(auto()) @map("_id") @db.ObjectId
+  mal_id        Int
+  score         Float?
+  episodes      Int?
+  synopsis      String?
+  name          String
+  description   String?
+  imageUrl      String
+  favoriteId    String?         @db.ObjectId
+  favoritesItem FavoritesItem[]
+}
+
+model Favorites {
+  id        String          @id @default(auto()) @map("_id") @db.ObjectId
+  items     FavoritesItem[]
+  user      User?           @relation(fields: [userId], references: [id])
+  userId    String?         @db.ObjectId
+  createdAt DateTime?       @default(now())
+  updatedAt DateTime        @updatedAt
+}
+
+model FavoritesItem {
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  animeId     String     @db.ObjectId
+  animeItem   AnimeItem  @relation(fields: [animeId], references: [id])
+  favorites   Favorites? @relation(fields: [favoritesId], references: [id])
+  favoritesId String?    @db.ObjectId
+}
