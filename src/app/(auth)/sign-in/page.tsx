@@ -15,7 +15,7 @@ function page() {
           alt=""
         />
         <Badge className="absolute left-1/2 top-1/3 z-50 mx-2 rounded-full rounded-bl-none bg-white">
-          <h1 className="p-2 text-xl text-muted-foreground">Welcome Back!</h1>
+          <h1 className="p-2 text-xl text-muted-foreground">okaeri!</h1>
         </Badge>
       </div>
 
