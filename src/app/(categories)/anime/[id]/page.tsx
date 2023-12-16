@@ -20,11 +20,13 @@ const fetchAnime = async (animeId: string) => {
 export async function generateMetadata({
   params: { id },
 }: pageParams): Promise<Metadata> {
-  const anime = await fetchAnime(id).then((res) => res);
+  const anime: TAnime = await fetchAnime(id).then((res) => res);
 
   return {
     title: "Anime Kisu - " + anime.title,
-    openGraph: {},
+    openGraph: {
+      images: [anime.images.jpg.image_url],
+    },
   };
 }
 
