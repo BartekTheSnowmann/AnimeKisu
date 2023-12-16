@@ -5,6 +5,8 @@ import AnimeImg from "./AnimeImg";
 import { CircleIcon, Flame, Heart, Star } from "lucide-react";
 import { TAnime } from "@/lib/animeTypes";
 import { Metadata } from "next";
+import UpcomingSkeleton from "@/components/UpcomingSkeleton";
+import Characters from "./Characters";
 
 interface pageParams {
   params: {
@@ -14,6 +16,13 @@ interface pageParams {
 
 const fetchAnime = async (animeId: string) => {
   const response = await axios.get(`https://api.jikan.moe/v4/anime/${animeId}`);
+  return response.data.data;
+};
+
+export const fetchCharacters = async (animeId: string) => {
+  const response = await axios.get(
+    `https://api.jikan.moe/v4/anime/${animeId}/characters`
+  );
   return response.data.data;
 };
 
@@ -35,6 +44,7 @@ export async function generateMetadata({
 
 async function page({ params: { id } }: pageParams) {
   const anime: TAnime = await fetchAnime(id);
+  const charactersPromise = await fetchCharacters(id);
 
   return (
     <section className="text-light mx-auto max-w-7xl px-4 py-12">
@@ -89,9 +99,9 @@ async function page({ params: { id } }: pageParams) {
         </div>
       </div>
 
-      {/* <Suspense fallback={<UpcomingSkeleton elements={10} variant={"small"} />}>
+      <Suspense fallback={<UpcomingSkeleton elements={10} variant={"small"} />}>
         <Characters promise={charactersPromise} />
-      </Suspense> */}
+      </Suspense>
     </section>
   );
 }

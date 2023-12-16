@@ -23,13 +23,10 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <div className="embla__container">
           {animeData.map((anime, index: number) => (
             <div className="embla__slide" key={index}>
-              {/* <div className="embla__slide__number">
-                <span>{index + 1}</span>
-              </div> */}
               <Link href={`anime/${anime.mal_id}`}>
                 <Image
                   loading="lazy"
-                  className="embla__slide__img duration-300 hover:scale-95"
+                  className="border-2 border-destructive embla__slide__img duration-300 hover:scale-95"
                   src={anime.images.jpg.image_url}
                   alt="Your alt text"
                   height={800}

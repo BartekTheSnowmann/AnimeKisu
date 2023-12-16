@@ -42,7 +42,7 @@ function Footer() {
           ))}
         </ul>
       </div>
-      <div className="mx-4 border-t-2 border-white text-center">
+      <div className="mx-4 border-t-2 border-black dark:border-white text-center">
         <p className="py-8">AnimeKisu© 2024</p>
       </div>
     </footer>

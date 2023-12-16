@@ -48,8 +48,10 @@ function Reviews({ animeData: anime }: { animeData: TAnimeReview }) {
               <AvatarFallback>User</AvatarFallback>
             </Avatar>
             <div className="ml-4 space-y-1">
-              <p className="text-sm font-medium leading-none drop-shadow-lg flex flex-col">
-                <span className="text-muted-foreground text-xs">Review by</span>
+              <p className="text-sm font-semibold leading-none drop-shadow-lg flex flex-col">
+                <span className="text-muted-foreground text-xs drop-shadow-lg">
+                  Review by
+                </span>
                 {anime.user.username}
               </p>
             </div>
@@ -58,9 +60,11 @@ function Reviews({ animeData: anime }: { animeData: TAnimeReview }) {
 
         <h4 className="mt-4 text-xl font-bold">{anime.entry.title}</h4>
         <div className="flex flex-col gap-2 pt-2">
-          {anime?.review?.length > 400
-            ? anime.review.slice(0, 400) + "..."
-            : anime.review}
+          <p>
+            {anime?.review?.length > 400
+              ? anime.review.slice(0, 400) + "..."
+              : anime.review}
+          </p>
           <UserComment
             userReview={anime.review}
             animeName={anime.entry.title}
