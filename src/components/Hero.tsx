@@ -12,6 +12,8 @@ function Hero() {
         src={Wallpaper}
         alt="Home-Wallpaper"
         role="presentation"
+        height={600}
+        width={1200}
       />
       <div className="absolute top-1/2 w-full -translate-y-1/2 place-items-center">
         <div className="mx-auto w-fit p-4">
