@@ -51,8 +51,11 @@ async function page({ params: { id } }: { params: { id: string } }) {
               </h1>
               {character?.nicknames &&
                 character.nicknames.map((nickname) => (
-                  <span className="uppercase text-muted-foreground">
-                    '{nickname}'
+                  <span
+                    key={`${character.mal_id}-nickname`}
+                    className="uppercase text-muted-foreground"
+                  >
+                    {nickname}
                   </span>
                 ))}
             </div>
