@@ -4,7 +4,7 @@ import React, { useTransition } from "react";
 import { Button } from "./ui/button";
 import { Trash } from "lucide-react";
 import { deleteFromFavorites } from "@/app/favorites/actions";
-import Spinner from "@/../public/spinner.svg";
+import Spinner from "@/app/public/spinner.svg";
 import Image from "next/image";
 import { toast } from "sonner";
 

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { AnimeIdk } from "../../../../../public/assets";
+import AnimeIdk from "@/app/public/assets/anime_idk.png";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Loader } from "lucide-react";

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import AnimeError from "@/../public/assets/AnimeError.png";
+import AnimeError from "@/app/public/assets/AnimeError.png";
 import { Lightbulb } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
