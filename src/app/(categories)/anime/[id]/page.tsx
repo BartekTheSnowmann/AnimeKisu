@@ -23,7 +23,8 @@ export async function generateMetadata({
   const anime: TAnime = await fetchAnime(id).then((res) => res);
 
   return {
-    title: "Anime Kisu - " + anime.title,
+    title: anime.title + "Anime Kisu",
+    description: anime.background.slice(0, 40) || anime.synopsis.slice(0, 40),
     openGraph: {
       images: [anime.images.jpg.image_url],
     },
