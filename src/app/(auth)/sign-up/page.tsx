@@ -23,17 +23,33 @@ function Page() {
       return;
     }
 
-    await prisma.user.create({
-      data: {
+    const isUsernameInDb = await prisma.user.findFirst({
+      where: {
         username,
-        name: username,
-        email,
-        image: imageUrl,
-        password,
       },
     });
 
-    redirect("/api/auth/signin");
+    const isEmailInDb = await prisma.user.findFirst({
+      where: {
+        email,
+      },
+    });
+
+    if (isUsernameInDb || isEmailInDb) {
+      return "User with such credentials already exists";
+    } else {
+      await prisma.user.create({
+        data: {
+          username,
+          name: username,
+          email,
+          image: imageUrl,
+          password,
+        },
+      });
+
+      redirect("/api/auth/signin");
+    }
   }
 
   return (

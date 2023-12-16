@@ -8,7 +8,7 @@ function searchResults({ data }: { data: TAnime[] }) {
     <>
       {data?.map((result: any) => (
         <div className="flex h-20 w-full items-center p-2" key={result.mal_id}>
-          <p className="text-muted-foreground flex-1 font-medium leading-none drop-shadow-lg">
+          <p className="text-md text-muted-foreground flex-1 leading-none drop-shadow-lg">
             <Link href={`/anime/${result.mal_id}`}>
               {result.title?.length > 20
                 ? result.title.slice(0, 16) + "..."
@@ -19,8 +19,8 @@ function searchResults({ data }: { data: TAnime[] }) {
             className="aspect-square object-contain"
             src={result.images.jpg.image_url}
             alt={result.title}
-            width={40}
-            height={80}
+            width={60}
+            height={100}
           />
         </div>
       ))}

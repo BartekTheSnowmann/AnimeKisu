@@ -23,7 +23,6 @@ import { toast } from "sonner";
 export default function ChangeProfilePicture() {
   const [imageUrl, setImageUrl] = useState("");
   const [isPending, startTransition] = useTransition();
-
   const { data: session, update } = useSession();
 
   return (
@@ -56,8 +55,8 @@ export default function ChangeProfilePicture() {
             <Image
               src={Spinner}
               alt="spinner"
-              width={56}
-              height={56}
+              width={28}
+              height={28}
               className="object-contain"
             />
           ) : (
@@ -72,10 +71,12 @@ export default function ChangeProfilePicture() {
                       image: imageUrl,
                     },
                   });
-                  toast.success("Updated profile picture");
+                  toast.success(
+                    "Updated profile picture. Sign in again to see the changes"
+                  );
                 })
               }
-              className="mt-2"
+              className=""
               variant={"outline"}
             >
               Submit

@@ -5,7 +5,6 @@ import { cookies } from "next/dist/client/components/headers";
 import { revalidatePath } from "next/cache";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/options";
-import { TAnime } from "@/lib/animeTypes";
 
 export async function removeCookie() {
   cookies().delete("favoriteListId");
