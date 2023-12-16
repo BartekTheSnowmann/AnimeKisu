@@ -1,5 +1,6 @@
 "use client";
 
+import Spinner from "@/app/public/spinner.svg";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
@@ -11,7 +12,7 @@ export type AnimeCard = JSX.Element;
 
 const getTopAnime = async (page: number) => {
   const response = await fetch(
-    `https://api.jikan.moe/v4/top/anime?page=${page}`,
+    `https://api.jikan.moe/v4/top/anime?page=${page}`
   );
   const data = await response.json();
   return data.data;
@@ -41,7 +42,7 @@ function LoadMore() {
       <section className="flex w-full items-center justify-center">
         <div ref={ref}>
           <Image
-            src="./spinner.svg"
+            src={Spinner}
             alt="spinner"
             width={56}
             height={56}
