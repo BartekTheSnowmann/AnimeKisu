@@ -16,7 +16,7 @@ async function AnimeReviews() {
       <div className="border-img pb-12" />
       <div className="pb-8">
         <h4 className="text-2xl font-bold">Reviews</h4>
-        <p>See what others have to say</p>
+        <p className="text-muted-foreground">See what others have to say</p>
       </div>
 
       {animeData &&

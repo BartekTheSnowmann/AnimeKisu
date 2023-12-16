@@ -2,11 +2,11 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -16,6 +16,9 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        "mobile-home": "url('../../public/assets/925715.png')",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -65,12 +68,33 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        myAnim: {
+          "0%,100%": {
+            transform: "translateX(0) rotate(45)",
+          },
+
+          "10%,30%,50%,70%": {
+            transform: "translateX(-3px)  rotate(90deg)",
+          },
+          "20%,40%,60%": {
+            transform: "translateX(3px) rotate(90deg)",
+          },
+
+          "80%": {
+            transform: "translateX(2px) rotate(90deg)",
+          },
+
+          "90% ": {
+            transform: "translateX(-2px) rotate(90deg)",
+          },
+        },
       },
       animation: {
+        shake: "myAnim 2s ease 0s 1 normal forwards",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};

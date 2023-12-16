@@ -3,6 +3,7 @@ import Wallpaper from "@/app/public/assets/wallpaper.jpg";
 import { PlayIcon } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import { AnimeHeroSticker } from "@/app/public/assets";
 
 function Hero() {
   return (
@@ -13,18 +14,28 @@ function Hero() {
         alt="Home-Wallpaper"
         role="presentation"
         height={600}
-        width={1200}
+        width={1280}
       />
-      <div className="absolute top-1/2 w-full -translate-y-1/2 place-items-center">
+      <Image
+        className="absolute bottom-0 right-4 z-10"
+        src={AnimeHeroSticker}
+        alt="hero-sticker"
+        role="presentation"
+        height={600}
+        width={180}
+      />
+
+      <div className="z-50 absolute top-1/2 w-full -translate-y-1/2 place-items-center">
         <div className="mx-auto w-fit p-4">
           <span className="text-lg font-bold tracking-widest text-destructive drop-shadow-md">
             Welcome 2
+            <div className="divider" />
           </span>
           <h1 className="text-6xl font-bold tracking-wide text-white md:text-8xl">
             AnimeKisu
           </h1>
           <span className="block py-4">
-            <p className="max-w-lg text-xl text-muted dark:text-muted-foreground md:max-w-xl">
+            <p className="font-semibold max-w-lg drop-shadow-lg text-xl text-muted dark:text-muted-foreground md:max-w-xl">
               Find something you will enjoy. Share your expression with other
               watchers.
             </p>

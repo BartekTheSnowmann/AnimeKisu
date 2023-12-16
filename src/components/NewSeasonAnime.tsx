@@ -25,7 +25,9 @@ async function NewSeasonAnime() {
           <h4 className="text-2xl font-bold">Explore new Anime</h4>
         </div>
         <div>
-          <p>Brand new ones awaits for you! Check it out!</p>
+          <p className="text-muted-foreground">
+            Brand new ones awaits for you! Check it out!
+          </p>
         </div>
       </div>
 

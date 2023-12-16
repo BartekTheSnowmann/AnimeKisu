@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { signIn } from "next-auth/react";
 import React, { useState } from "react";
 import { toast } from "sonner";
+import FormBtn from "../sign-up/FormBtn";
 
 function LoginForm() {
   const handleSubmit = async (e: React.FormEvent) => {
@@ -13,12 +14,16 @@ function LoginForm() {
       return toast.warning("Provide all credentials!");
     }
 
-    await signIn("credentials", {
-      callbackUrl: "/",
-      redirect: true,
-      password,
-      username,
-    });
+    try {
+      await signIn("credentials", {
+        callbackUrl: "/",
+        redirect: true,
+        password,
+        username,
+      });
+    } catch (error) {
+      toast.error("There was an error");
+    }
   };
 
   const [password, setPassword] = useState("");
@@ -36,7 +41,7 @@ function LoginForm() {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <Button>Submit</Button>
+      <FormBtn variant={"default"}>Submit</FormBtn>
     </form>
   );
 }

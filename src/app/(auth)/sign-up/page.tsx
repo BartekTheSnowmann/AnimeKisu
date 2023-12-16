@@ -7,6 +7,8 @@ import { redirect } from "next/navigation";
 import React from "react";
 import { AnimeFront1 } from "@/app/public/assets";
 import { useFormState, useFormStatus } from "react-dom";
+import FormBtn from "./FormBtn";
+import { Badge } from "@/components/ui/badge";
 
 function Page() {
   async function createNewUser(formdata: FormData) {
@@ -38,6 +40,7 @@ function Page() {
     <section className="mx-auto flex max-w-7xl items-center justify-center gap-4 px-4 py-12">
       <div className="masked-image relative hidden min-h-[350px] bg-destructive sm:w-[50%] md:block md:min-h-[500px]">
         <Image className="absolute" src={AnimeFront1} alt="" />
+        <Badge className="rounded-l-none mt-4">Join Us, User-San!</Badge>
       </div>
 
       <div className="px-4 py-8 md:py-0">
@@ -69,9 +72,9 @@ function Page() {
             placeholder="password"
             autoComplete="off"
           />
-          <Button className="px-4 py-2 duration-300" variant={"destructive"}>
+          <FormBtn className="px-4 py-2 duration-300" variant={"destructive"}>
             Submit
-          </Button>
+          </FormBtn>
         </form>
       </div>
     </section>

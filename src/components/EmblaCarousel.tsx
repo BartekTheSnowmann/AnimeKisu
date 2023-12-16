@@ -40,11 +40,11 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
           ))}
         </div>
       </div>
-      <div className="flex gap-2 pt-6">
-        <span className="flex items-center gap-x-2 font-semibold">
+      <div className="drop-shadow-lg flex gap-2 pt-6">
+        <span className="text-muted-foreground flex items-center gap-x-2 font-semibold">
           Grab it!
           <div className="rounded-full bg-destructive p-2">
-            <Hand color="white" className="group-hover:animate-shake" />
+            <Hand className="text-white group-hover:animate-shake" />
           </div>
         </span>
       </div>

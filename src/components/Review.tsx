@@ -4,6 +4,7 @@ import { Calendar, StarIcon } from "lucide-react";
 import UserComment from "./UserComment";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { TAnimeReview } from "@/lib/animeTypes";
+import { Badge } from "./ui/badge";
 
 function Reviews({ animeData: anime }: { animeData: TAnimeReview }) {
   let reviewDate = new Date(anime.date).toDateString();
@@ -26,14 +27,14 @@ function Reviews({ animeData: anime }: { animeData: TAnimeReview }) {
 
       <div className="flex flex-1 flex-col rounded-br-lg bg-destructive p-4">
         <div className="mb-4 flex space-x-4 text-sm text-white drop-shadow-md">
-          <div className="flex items-center">
-            <StarIcon color="yellow" className="mr-1" />
+          <Badge className="rounded-md flex items-center">
+            <StarIcon className="mr-1  text-yellow-500" />
             {anime.score}
-          </div>
-          <div className="flex items-center">
-            <Calendar color="white" className="mr-2" />
+          </Badge>
+          <Badge className="rounded-md p-2 flex items-center">
+            <Calendar className="mr-2  text-red-700" />
             {reviewDate}
-          </div>
+          </Badge>
         </div>
 
         <div className="my-2 space-y-8">

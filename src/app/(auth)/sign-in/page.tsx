@@ -1,7 +1,7 @@
 import React from "react";
 import LoginForm from "./LoginForm";
 import Image from "next/image";
-import { AnimeFront2 } from "@/app/public/assets";
+import { AnimeFront2, AnimeFront2v2 } from "@/app/public/assets";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 
@@ -14,8 +14,8 @@ function page() {
           src={AnimeFront2}
           alt=""
         />
-        <Badge className="absolute left-1/2 top-1/3 z-50 mx-2 rounded-full rounded-bl-none bg-white">
-          <h1 className="p-2 text-xl text-muted-foreground">okaeri!</h1>
+        <Badge className="rounded-l-none absolute top-4 left-0 shadow-lg">
+          Okaeri!
         </Badge>
       </div>
 
@@ -28,7 +28,7 @@ function page() {
           <span className="text-muted-foreground">Doesnt have an account?</span>
           <Link
             className="pl-2 font-bold text-destructive duration-300"
-            href="/api/auth/signin"
+            href="/sign-up"
           >
             Sign Up
           </Link>

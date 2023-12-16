@@ -24,9 +24,9 @@ export async function generateMetadata({
 
   return {
     title: anime.title + "Anime Kisu",
-    description:
-      anime.background.slice(0, 80) + "..." ||
-      anime.synopsis.slice(0, 80) + "...",
+    description: anime?.synopsis
+      ? anime.synopsis.slice(0, 80) + "..."
+      : anime.background.slice(0, 80) + "...",
     openGraph: {
       images: [anime.images.jpg.image_url],
     },
