@@ -39,7 +39,7 @@ export const socialLinks = [
 export const authLinks = [
   {
     name: "Sign In",
-    link: "/api/auth/signin",
+    link: "/sign-in",
   },
   {
     name: "Sign up",

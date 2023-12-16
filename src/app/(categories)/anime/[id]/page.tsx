@@ -37,9 +37,11 @@ async function page({ params: { id } }: pageParams) {
     <section className="text-light mx-auto max-w-7xl px-4 py-12">
       {/* Anime IMG */}
       <div className="flex flex-wrap gap-4 pb-12 lg:flex-nowrap">
-        <Suspense fallback={"...Loading"}>
-          <AnimeImg image={anime.images.jpg.image_url} />
-        </Suspense>
+        <div className="order-2">
+          <Suspense fallback={"...Loading"}>
+            <AnimeImg image={anime.images.jpg.image_url} />
+          </Suspense>
+        </div>
 
         {/* Anime Info */}
         <div className="flex flex-col gap-2">

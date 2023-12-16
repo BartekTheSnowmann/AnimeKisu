@@ -10,7 +10,7 @@ import { MenuIcon } from "lucide-react";
 import { Session } from "next-auth";
 import React from "react";
 import UserAvatar from "./UserAvatar";
-import { navLinks } from "../../constant/data";
+import { navLinks, authLinks } from "../../constant/data";
 import Link from "next/link";
 import ModeToggle from "./DarkModeSwitch";
 import LogOutBtn from "./LogOutBtn";
@@ -49,9 +49,11 @@ function Menu({ session }: { session: Session | null }) {
             {session?.user ? (
               <LogOutBtn className="">Sign Out</LogOutBtn>
             ) : (
-              <Button asChild>
-                <Link href={"/sign-up"}>Sign Up</Link>
-              </Button>
+              authLinks.map((link) => (
+                <Button key={`menu_authlink_${link.name}`} asChild>
+                  <Link href={link.link}>{link.name}</Link>
+                </Button>
+              ))
             )}
           </SheetHeader>
         </SheetContent>
