@@ -16,6 +16,8 @@ import { Label } from "@/components/ui/label";
 import { useState, useTransition } from "react";
 import { changeProfilePicture } from "../../lib/actions";
 import { useSession } from "next-auth/react";
+import Image from "next/image";
+import { toast } from "sonner";
 
 export default function ChangeProfilePicture() {
   const [imageUrl, setImageUrl] = useState("");
@@ -49,18 +51,27 @@ export default function ChangeProfilePicture() {
           </div>
         </div>
         <DialogFooter className="sm:justify-start">
-          <DialogClose asChild>
+          {isPending ? (
+            <Image
+              src="./spinner.svg"
+              alt="spinner"
+              width={56}
+              height={56}
+              className="object-contain"
+            />
+          ) : (
             <Button
               onClick={() =>
                 startTransition(async () => {
                   await changeProfilePicture(imageUrl);
-                  update({
+                  await update({
                     ...session,
                     user: {
                       ...session?.user,
                       image: imageUrl,
                     },
                   });
+                  toast.success("Updated profile picture");
                 })
               }
               className="mt-2"
@@ -68,7 +79,8 @@ export default function ChangeProfilePicture() {
             >
               Submit
             </Button>
-          </DialogClose>
+          )}
+
           <DialogClose asChild>
             <Button type="button">Close</Button>
           </DialogClose>
