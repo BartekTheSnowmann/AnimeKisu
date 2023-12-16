@@ -1,5 +1,6 @@
 "use client";
 
+import Spinner from "@/app/public/spinner.svg";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -53,7 +54,7 @@ export default function ChangeProfilePicture() {
         <DialogFooter className="sm:justify-start">
           {isPending ? (
             <Image
-              src="./spinner.svg"
+              src={Spinner}
               alt="spinner"
               width={56}
               height={56}

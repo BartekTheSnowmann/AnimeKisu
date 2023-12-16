@@ -36,5 +36,17 @@ export async function createFavoriteListAfterSignIn(userId: string) {
 }
 
 export async function changeProfilePicture(imageUrl: string) {
-  console.log(imageUrl);
+  const session = await getServerSession(authOptions);
+
+  if (session) {
+    await prisma.user.update({
+      where: {
+        id: session.user.id,
+      },
+      data: {
+        image: imageUrl,
+      },
+    });
+  }
+  revalidatePath("/profile");
 }
