@@ -28,7 +28,7 @@ export type TAnime = {
       type: string;
       name: string;
       url: string;
-    },
+    }
   ];
 };
 

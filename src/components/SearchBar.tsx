@@ -62,7 +62,7 @@ function SearchBar() {
         </Button>
       </form>
       {showResults && (
-        <div className="absolute left-0 top-10 max-h-[300px] overflow-y-scroll backdrop-blur-md">
+        <div className="shadow-xl rounded-b-sm absolute left-0 top-10 max-h-[300px] overflow-y-scroll bg-white dark:bg-black">
           <SearchResults data={data!} />
         </div>
       )}

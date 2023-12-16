@@ -48,7 +48,8 @@ function Reviews({ animeData: anime }: { animeData: TAnimeReview }) {
               <AvatarFallback>User</AvatarFallback>
             </Avatar>
             <div className="ml-4 space-y-1">
-              <p className="text-sm font-medium leading-none drop-shadow-lg">
+              <p className="text-sm font-medium leading-none drop-shadow-lg flex flex-col">
+                <span className="text-muted-foreground text-xs">Review by</span>
                 {anime.user.username}
               </p>
             </div>

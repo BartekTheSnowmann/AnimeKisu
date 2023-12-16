@@ -17,7 +17,7 @@ function Hero() {
         width={1280}
       />
       <Image
-        className="absolute bottom-0 right-4 z-10"
+        className="absolute bottom-0 right-4 z-10 opacity-75"
         src={AnimeHeroSticker}
         alt="hero-sticker"
         role="presentation"
@@ -25,7 +25,7 @@ function Hero() {
         width={180}
       />
 
-      <div className="z-50 absolute top-1/2 w-full -translate-y-1/2 place-items-center">
+      <div className="z-10 absolute top-1/2 w-full -translate-y-1/2 place-items-center">
         <div className="mx-auto w-fit p-4">
           <span className="text-lg font-bold tracking-widest text-destructive drop-shadow-md">
             Welcome 2
