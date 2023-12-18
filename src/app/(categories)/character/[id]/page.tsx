@@ -53,7 +53,7 @@ async function page({ params: { id } }: { params: { id: string } }) {
                 character.nicknames.map((nickname) => (
                   <span
                     key={`${character.mal_id}-nickname`}
-                    className="uppercase text-muted-foreground"
+                    className="uppercase text-muted-foreground break-normal"
                   >
                     {nickname}
                   </span>

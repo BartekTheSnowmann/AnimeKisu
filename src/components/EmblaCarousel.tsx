@@ -26,7 +26,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
               <Link href={`anime/${anime.mal_id}`}>
                 <Image
                   loading="lazy"
-                  className="border-2 border-destructive embla__slide__img duration-300 hover:scale-95"
+                  className="rounded-sm border-2 border-destructive embla__slide__img duration-300 hover:scale-95"
                   src={anime.images.jpg.image_url}
                   alt="Your alt text"
                   height={800}

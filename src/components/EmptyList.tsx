@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import AnimeError from "@/app/public/assets/AnimeError.png";
 import { Lightbulb } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
@@ -24,7 +23,7 @@ function EmptyList() {
             <Lightbulb />
           </span>
           <Button asChild className="m-1 mx-auto block w-fit">
-            <Link href={"/top"}>Find Anime</Link>
+            <Link href={"/recommendations"}>Find Anime</Link>
           </Button>
         </div>
       </div>

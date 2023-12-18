@@ -46,7 +46,7 @@ function SearchBar() {
     <div ref={searchBarRef} className="relative">
       <form className="flex" onSubmit={handleSubmit}>
         <input
-          className="relative border-2 p-2 outline-none"
+          className="relative border-2 p-2 outline-none rounded-sm"
           autoComplete="off"
           type="text"
           name="name"

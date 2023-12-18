@@ -18,14 +18,14 @@ function Reviews({ animeData: anime }: { animeData: TAnimeReview }) {
   return (
     <div className="flex w-full flex-col gap-8 md:gap-4 lg:flex-row">
       <Image
-        className="mx-auto md:mx-0"
+        className="mx-auto md:mx-0 rounded-sm"
         src={anime.entry.images.jpg.image_url}
         alt={anime.entry.title}
         width={400}
         height={800}
       />
 
-      <div className="flex flex-1 flex-col rounded-br-lg bg-destructive p-4">
+      <div className="rounded-sm flex flex-1 flex-col rounded-br-lg bg-destructive p-4">
         <div className="mb-4 flex space-x-4 text-sm text-white drop-shadow-md">
           <Badge className="rounded-md flex items-center">
             <StarIcon className="mr-1  text-yellow-500" />

@@ -32,7 +32,7 @@ export async function generateMetadata({
   const anime: TAnime = await fetchAnime(id).then((res) => res);
 
   return {
-    title: anime.title + "Anime Kisu",
+    title: anime.title + "- Anime Kisu",
     description: anime?.synopsis
       ? anime.synopsis.slice(0, 80) + "..."
       : anime.background.slice(0, 80) + "...",

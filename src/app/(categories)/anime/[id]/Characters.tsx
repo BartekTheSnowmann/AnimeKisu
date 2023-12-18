@@ -23,12 +23,12 @@ async function Characters({ promise }: Props) {
   const charactersData = await promise;
 
   return (
-    <div className="flex flex-wrap gap-4">
+    <div>
       <div>
         <h4 className="font-bold">Characters</h4>
         <div className="divider" />
       </div>
-      <div className="flex flex-wrap gap-4">
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 mt-4 gap-4 justify-items-start">
         {charactersData.map((character: TCharacterData) => (
           <div
             className="relative flex flex-col justify-between items-center"
@@ -43,11 +43,6 @@ async function Characters({ promise }: Props) {
                 height={120}
               />
             </Link>
-            {/* <p className="absolute bottom-0 bg-white dark:bg-black w-full text-center p-1 text-muted-foreground">
-              {character.character.name.length > 10
-                ? character.character.name.slice(0, 10) + "..."
-                : character.character.name}
-            </p> */}
           </div>
         ))}
       </div>

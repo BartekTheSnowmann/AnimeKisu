@@ -55,7 +55,7 @@ function ChangeBio() {
               alt="spinner"
               width={28}
               height={28}
-              className="object-contain"
+              className="object-contain mx-auto mt-2"
             />
           ) : (
             <Button
@@ -67,7 +67,7 @@ function ChangeBio() {
                   );
                 })
               }
-              className=""
+              className="mt-2"
               variant={"outline"}
             >
               Submit

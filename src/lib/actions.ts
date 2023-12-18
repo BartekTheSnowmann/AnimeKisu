@@ -63,4 +63,6 @@ export async function changeBio(bio: string) {
       },
     });
   }
+
+  revalidatePath("/profile");
 }
