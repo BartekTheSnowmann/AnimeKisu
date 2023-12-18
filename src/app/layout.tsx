@@ -18,9 +18,6 @@ export const fontSans = FontSans({
 export const metadata: Metadata = {
   title: "AnimeKisu",
   description: "Find Something For Yourself",
-  openGraph: {
-    images: [OpenGraphImage.src],
-  },
 };
 
 export default function RootLayout({
