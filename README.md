@@ -1,5 +1,5 @@
 <div align="left">
-  <img height="60" src="https://github.com/BartekTheSnowmann/anime-kisu/blob/main/public/assets/AnimeKisuLogo.png?raw=true"  />
+  <img height="60" src="[https://github.com/BartekTheSnowmann/anime-kisu/blob/main/public/assets/AnimeKisuLogo.png?raw=true](https://github.com/BartekTheSnowmann/AnimeKisu/blob/main/src/app/public/assets/AnimeKisuLogo.png?raw=true)"  />
 </div>
 
 ###
