@@ -15,6 +15,7 @@ function Hero() {
         role="presentation"
         height={600}
         width={1280}
+        priority={true}
       />
       <Image
         className="absolute bottom-0 right-4 z-10 opacity-75"

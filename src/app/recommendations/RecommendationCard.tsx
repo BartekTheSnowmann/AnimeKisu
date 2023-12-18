@@ -1,9 +1,9 @@
 import React from "react";
-import { TRecommendation } from "./page";
 import Image from "next/image";
 import UserComment from "@/components/UserComment";
 import UserBadge from "@/components/UserBadge";
 import Link from "next/link";
+import { TRecommendation } from "@/lib/animeTypes";
 
 function RecommendationCard({
   animeRecommendation,

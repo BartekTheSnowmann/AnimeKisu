@@ -62,7 +62,10 @@ function SearchBar() {
         </Button>
       </form>
       {showResults && (
-        <div className="shadow-xl rounded-b-sm absolute left-0 top-10 max-h-[300px] overflow-y-scroll bg-white dark:bg-black">
+        <div
+          onClick={() => setShowResults(false)}
+          className="shadow-xl rounded-b-sm absolute left-0 top-10 max-h-[300px] overflow-y-scroll bg-white dark:bg-black"
+        >
           <SearchResults data={data!} />
         </div>
       )}

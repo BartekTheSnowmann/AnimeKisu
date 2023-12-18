@@ -1,7 +1,7 @@
 import React from "react";
 import LoginForm from "./LoginForm";
 import Image from "next/image";
-import { AnimeFront2, AnimeFront2v2 } from "@/app/public/assets";
+import { AnimeFront2 } from "@/app/public/assets";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 

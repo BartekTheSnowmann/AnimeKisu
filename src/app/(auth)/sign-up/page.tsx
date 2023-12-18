@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import prisma from "@/lib/prisma/db";
 import Image from "next/image";
@@ -6,7 +5,6 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import React from "react";
 import { AnimeFront1 } from "@/app/public/assets";
-import { useFormState, useFormStatus } from "react-dom";
 import FormBtn from "./FormBtn";
 import { Badge } from "@/components/ui/badge";
 

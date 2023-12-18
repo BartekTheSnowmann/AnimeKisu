@@ -1,30 +1,8 @@
 import { getRecommendations } from "@/lib/api/apiCalls";
 import React from "react";
 import RecommendationCard from "./RecommendationCard";
-import { Heart, Lightbulb } from "lucide-react";
-
-export type TRecommendation = {
-  mal_id: string;
-  entry: [
-    {
-      mal_id: number;
-      url: string;
-
-      images: {
-        jpg: {
-          image_url: string;
-        };
-      };
-      title: string;
-    }
-  ];
-  content: string;
-  date: string;
-  user: {
-    url: string;
-    username: string;
-  };
-};
+import { Lightbulb } from "lucide-react";
+import { TRecommendation } from "@/lib/animeTypes";
 
 async function page() {
   const recommendations: TRecommendation[] = await getRecommendations(1);

@@ -12,3 +12,15 @@ export const getAnimeReviews = async () => {
   const data = await response.json();
   return data.data;
 };
+
+export const fetchAnime = async (animeId: string) => {
+  const response = await axios.get(`https://api.jikan.moe/v4/anime/${animeId}`);
+  return response.data.data;
+};
+
+export const fetchCharacters = async (animeId: string) => {
+  const response = await axios.get(
+    `https://api.jikan.moe/v4/anime/${animeId}/characters`
+  );
+  return response.data.data;
+};

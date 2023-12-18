@@ -1,22 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { TCharacterData } from "@/lib/animeTypes";
 
 type Props = {
   promise: Promise<any>;
-};
-
-type TCharacterData = {
-  character: {
-    nicknames?: string[];
-    favorites: number;
-    about: string;
-    mal_id: string;
-    name: string;
-    images: {
-      jpg: { image_url: string };
-    };
-  };
 };
 
 async function Characters({ promise }: Props) {

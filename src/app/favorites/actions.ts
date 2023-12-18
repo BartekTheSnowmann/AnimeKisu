@@ -4,7 +4,6 @@ import { cookies } from "next/dist/client/components/headers";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/options";
 import prisma from "@/lib/prisma/db";
-import { Favorites, FavoritesItem } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 
 export async function getFavoritesList() {

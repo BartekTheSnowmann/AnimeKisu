@@ -53,3 +53,39 @@ export type TAnimeReview = {
   score: number;
   date: string;
 };
+
+export type TRecommendation = {
+  mal_id: string;
+  entry: [
+    {
+      mal_id: number;
+      url: string;
+
+      images: {
+        jpg: {
+          image_url: string;
+        };
+      };
+      title: string;
+    }
+  ];
+  content: string;
+  date: string;
+  user: {
+    url: string;
+    username: string;
+  };
+};
+
+export type TCharacterData = {
+  character: {
+    nicknames?: string[];
+    favorites: number;
+    about: string;
+    mal_id: string;
+    name: string;
+    images: {
+      jpg: { image_url: string };
+    };
+  };
+};

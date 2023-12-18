@@ -1,5 +1,4 @@
 import React, { Suspense } from "react";
-import axios from "axios";
 import AddToFavBtn from "./AddToFavBtn";
 import AnimeImg from "./AnimeImg";
 import { CircleIcon, Flame, Heart, Star } from "lucide-react";
@@ -7,24 +6,13 @@ import { TAnime } from "@/lib/animeTypes";
 import { Metadata } from "next";
 import UpcomingSkeleton from "@/components/UpcomingSkeleton";
 import Characters from "./Characters";
+import { fetchAnime, fetchCharacters } from "@/lib/api/apiCalls";
 
 interface pageParams {
   params: {
     id: string;
   };
 }
-
-const fetchAnime = async (animeId: string) => {
-  const response = await axios.get(`https://api.jikan.moe/v4/anime/${animeId}`);
-  return response.data.data;
-};
-
-const fetchCharacters = async (animeId: string) => {
-  const response = await axios.get(
-    `https://api.jikan.moe/v4/anime/${animeId}/characters`
-  );
-  return response.data.data;
-};
 
 export async function generateMetadata({
   params: { id },
