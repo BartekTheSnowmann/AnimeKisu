@@ -18,6 +18,7 @@ export const fontSans = FontSans({
 export const metadata: Metadata = {
   title: "AnimeKisu",
   description: "Find Something For Yourself",
+  metadataBase: new URL("https://animekisu-bysnowmann.netlify.app/"),
 };
 
 export default function RootLayout({
