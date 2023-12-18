@@ -49,3 +49,18 @@ export async function changeProfilePicture(imageUrl: string) {
   }
   revalidatePath("/profile");
 }
+
+export async function changeBio(bio: string) {
+  const session = await getServerSession(authOptions);
+
+  if (session) {
+    await prisma.user.update({
+      where: {
+        id: session.user.id,
+      },
+      data: {
+        bio: bio,
+      },
+    });
+  }
+}

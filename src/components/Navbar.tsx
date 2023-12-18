@@ -10,6 +10,7 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/options";
 import UserDropDown from "./UserDropDown";
 import Menu from "./Menu";
 import { navLinks, authLinks } from "../../constant/data";
+import NavItems from "./NavItems";
 
 async function Navbar() {
   const session = await getServerSession(authOptions);
@@ -26,16 +27,8 @@ async function Navbar() {
         </div>
 
         <div className="hidden items-center gap-4 md:flex">
+          <NavItems />
           <ul className="flex gap-4">
-            {navLinks.map((navlink) => (
-              <Link
-                key={`menu_link-${navlink.name}`}
-                className="flex items-center gap-2 text-sm font-medium leading-none drop-shadow-lg duration-300 hover:text-red-500"
-                href={navlink.link}
-              >
-                {navlink.name}
-              </Link>
-            ))}
             {session?.user ? (
               <div className="mx-2">
                 <UserDropDown session={session} />

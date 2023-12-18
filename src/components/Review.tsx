@@ -2,9 +2,9 @@ import React from "react";
 import Image from "next/image";
 import { Calendar, StarIcon } from "lucide-react";
 import UserComment from "./UserComment";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { TAnimeReview } from "@/lib/animeTypes";
 import { Badge } from "./ui/badge";
+import UserBadge from "./UserBadge";
 
 function Reviews({ animeData: anime }: { animeData: TAnimeReview }) {
   let reviewDate = new Date(anime.date).toDateString();
@@ -38,24 +38,10 @@ function Reviews({ animeData: anime }: { animeData: TAnimeReview }) {
         </div>
 
         <div className="my-2 space-y-8">
-          <div className="flex items-center">
-            <Avatar className="h-9 w-9 shadow-lg">
-              <AvatarImage
-                className="object-cover"
-                src={anime.user.images.jpg.image_url}
-                alt={anime.user.username}
-              />
-              <AvatarFallback>User</AvatarFallback>
-            </Avatar>
-            <div className="ml-4 space-y-1">
-              <p className="text-sm font-semibold leading-none drop-shadow-lg flex flex-col">
-                <span className="text-muted-foreground text-xs drop-shadow-lg">
-                  Review by
-                </span>
-                {anime.user.username}
-              </p>
-            </div>
-          </div>
+          <UserBadge
+            username={anime.user.username}
+            userImg={anime.user.images.jpg.image_url}
+          />
         </div>
 
         <h4 className="mt-4 text-xl font-bold">{anime.entry.title}</h4>

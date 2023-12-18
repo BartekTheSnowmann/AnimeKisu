@@ -21,7 +21,7 @@ export default function UserComment({
     <Dialog>
       <DialogTrigger asChild>
         <Button className="w-fit" variant="outline">
-          See More
+          See Full
         </Button>
       </DialogTrigger>
       <DialogContent className="max-h-screen overflow-y-scroll sm:max-w-md">

@@ -4,6 +4,7 @@ import { authOptions } from "../api/auth/[...nextauth]/options";
 import ProfilePicture from "./ProfilePicture";
 import ChangeProfilePicture from "./ChangeProfilePicture";
 import { redirect } from "next/navigation";
+import UserBio from "./UserBio";
 
 async function page() {
   const session = await getServerSession(authOptions);
@@ -30,7 +31,7 @@ async function page() {
             {session.user.name}
           </h3>
           <span className="text-muted-foreground">
-            One of the users on AnimeKisu
+            <UserBio userId={session.user.id} />
           </span>
         </div>
       </div>

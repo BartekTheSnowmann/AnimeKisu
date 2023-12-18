@@ -43,11 +43,11 @@ async function Characters({ promise }: Props) {
                 height={120}
               />
             </Link>
-            <p className="absolute bottom-0 bg-white dark:bg-black w-full text-center p-1 text-muted-foreground">
+            {/* <p className="absolute bottom-0 bg-white dark:bg-black w-full text-center p-1 text-muted-foreground">
               {character.character.name.length > 10
                 ? character.character.name.slice(0, 10) + "..."
                 : character.character.name}
-            </p>
+            </p> */}
           </div>
         ))}
       </div>

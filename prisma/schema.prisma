@@ -18,6 +18,7 @@ model User {
   password  String
   image     String?
   Favorites Favorites[]
+  bio       String?
 }
 
 model AnimeItem {

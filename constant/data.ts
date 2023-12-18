@@ -1,4 +1,12 @@
-import { Facebook, Flame, Github, Heart, Home, Linkedin } from "lucide-react";
+import {
+  Facebook,
+  Flame,
+  Github,
+  Heart,
+  Home,
+  Lightbulb,
+  Linkedin,
+} from "lucide-react";
 
 export const navLinks = [
   {
@@ -15,6 +23,11 @@ export const navLinks = [
     name: "Favorites",
     link: "/favorites",
     icon: Heart,
+  },
+  {
+    name: "Recommendations",
+    link: "/recommendations",
+    icon: Lightbulb,
   },
 ];
 

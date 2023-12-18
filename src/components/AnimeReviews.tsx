@@ -1,12 +1,7 @@
 import React from "react";
 import Review from "./Review";
 import { TAnimeReview } from "@/lib/animeTypes";
-
-const getAnimeReviews = async () => {
-  const response = await fetch("https://api.jikan.moe/v4/reviews/anime");
-  const data = await response.json();
-  return data.data;
-};
+import { getAnimeReviews } from "@/lib/api/apiCalls";
 
 async function AnimeReviews() {
   const animeData: TAnimeReview[] = await getAnimeReviews();

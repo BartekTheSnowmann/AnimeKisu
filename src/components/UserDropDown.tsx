@@ -29,7 +29,7 @@ function UserDropDown({ session }: { session: Session }) {
           <DropdownMenuItem>Favorites</DropdownMenuItem>
         </Link>
         <DropdownMenuSeparator />
-        <LogOutBtn className="w-full mx-2 mx-auto">Sign out</LogOutBtn>
+        <LogOutBtn className="w-full mx-auto">Sign out</LogOutBtn>
       </DropdownMenuContent>
     </DropdownMenu>
   );
