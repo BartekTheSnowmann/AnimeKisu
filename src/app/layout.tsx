@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import { Toaster } from "sonner";
 import Footer from "@/components/Footer";
 import AuthProvider from "@/context/AuthProvider";
+import OpenGraphImage from "@/app/opengraph-image.jpg";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   title: "AnimeKisu",
   description: "Find Something For Yourself",
   openGraph: {
-    images: ["@/app/opengraph-image.jpg"],
+    images: [OpenGraphImage.src],
   },
 };
 
