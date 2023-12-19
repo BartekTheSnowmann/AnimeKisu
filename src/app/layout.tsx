@@ -8,7 +8,6 @@ import Navbar from "@/components/Navbar";
 import { Toaster } from "sonner";
 import Footer from "@/components/Footer";
 import AuthProvider from "@/context/AuthProvider";
-import OpenGraphImage from "@/app/opengraph-image.jpg";
 
 export const fontSans = FontSans({
   subsets: ["latin"],

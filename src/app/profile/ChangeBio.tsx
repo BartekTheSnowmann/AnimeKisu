@@ -67,7 +67,6 @@ function ChangeBio() {
                   );
                 })
               }
-              className="mt-2"
               variant={"outline"}
             >
               Submit
