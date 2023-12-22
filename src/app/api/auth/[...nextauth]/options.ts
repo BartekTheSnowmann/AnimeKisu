@@ -19,12 +19,22 @@ export const authOptions: NextAuthOptions = {
           placeholder: "your-awesome-password",
         },
       },
+
       async authorize(credentials) {
         const user = await prisma.user.findUnique({
           where: {
             username: credentials?.username,
           },
         });
+
+        if (!user) {
+          return null;
+        }
+
+        const isPwdMatching = user.password === credentials?.password;
+        if (!isPwdMatching) {
+          return null;
+        }
 
         return user;
       },

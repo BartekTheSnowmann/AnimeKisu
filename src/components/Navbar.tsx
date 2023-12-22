@@ -19,7 +19,7 @@ async function Navbar() {
     <nav className="sticky top-0 z-30 bg-white dark:bg-black">
       <div className="bg-dark z-50 mx-auto flex h-20 max-w-7xl items-center justify-between p-4 shadow-md">
         <Link href={"/"}>
-          <Image src={Logo} alt="Logo" width={40} height={40} />
+          <Image src={Logo} alt="Logo" priority width={40} height={40} />
         </Link>
 
         <div className="">

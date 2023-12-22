@@ -10,7 +10,13 @@ function Footer() {
       <div className="flex items-start justify-between px-4 pb-8">
         <div>
           <Link href="/">
-            <Image src={Logo} alt="Anime-Kisu" height={40} width={40} />
+            <Image
+              src={Logo}
+              alt="Anime-Kisu"
+              priority
+              height={40}
+              width={40}
+            />
           </Link>
           {/* <p>AnimeKisu - Express yourself</p> */}
         </div>
