@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { ShieldAlert } from "lucide-react";
 
 type TstateError = {
   isError: boolean | null;
@@ -80,13 +81,15 @@ function LoginForm() {
   return (
     <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
       {isError.isError && (
-        <Badge className="block text-center bg-destructive text-white font-bold py-2">
+        <Badge className="bg-transparent px-0 text-destructive font-bold py-2">
           <motion.span
-            key={isError.message?.length}
+            className="flex items-center gap-x-2"
+            key={`${Date.now()}-error`}
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.2 }}
           >
+            <ShieldAlert />
             There is an error!
           </motion.span>
         </Badge>
